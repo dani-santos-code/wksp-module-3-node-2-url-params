@@ -6,6 +6,8 @@ const express = require("express");
 
 const { top50 } = require("./data/top50");
 
+const mostPopularArtist = require("./data/mostPopular");
+
 const PORT = process.env.PORT || 8000;
 
 const app = express();
@@ -18,10 +20,16 @@ app.set("view engine", "ejs");
 // endpoints here
 
 app.get("/top50", (req, res) => {
-  console.log({ top50 });
   res.render("pages/top50", {
     title: "Top 50 Songs Streamed on Spotify",
     top50
+  });
+});
+
+app.get("/top50/popular-artist", (req, res) => {
+  res.render("pages/popularArtist", {
+    title: "Most Popular Artist",
+    mostPopularArtist
   });
 });
 
