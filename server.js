@@ -8,6 +8,8 @@ const { top50 } = require("./data/top50");
 
 const mostPopularArtist = require("./data/mostPopular");
 
+const filter = require("./data/filteredByRank");
+
 const PORT = process.env.PORT || 8000;
 
 const app = express();
@@ -30,6 +32,15 @@ app.get("/top50/popular-artist", (req, res) => {
   res.render("pages/popularArtist", {
     title: "Most Popular Artist",
     mostPopularArtist
+  });
+});
+
+app.get("/top50/song/:number", (req, res) => {
+  const songNumber = req.params.number;
+  let filteredSong = filter.filterByRank(songNumber);
+  res.render("pages/songByRank", {
+    title: `Song #${filteredSong[0].rank}`,
+    filteredSong
   });
 });
 

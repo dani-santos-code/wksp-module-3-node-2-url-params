@@ -8,7 +8,7 @@ We want to render this on our website.
 
 In order to do this, you will need to
 
-- create a file called `top50.ejs ` in `views/pages/`.
+- create a file called `top50.ejs` in `views/pages/`.
 - add in the `header` and `footer` partials. (look over these files and see what they contain).
 - create a `get` endpoint for the following path: `/top50`.
 - the function called at this enpoint to use `res.render()`. (you can write your function directly inside of `server.js`)
@@ -26,7 +26,7 @@ Time to add some data to the page.
 
 - We are requiring the `top50` file at the top of `server.js`. You have access to the file in there.
 - Pass the array to the `top50.ejs`.
-- Render the list on the page (only the rank and title for  now).
+- Render the list on the page (only the rank and title for now).
 - This data is a list. Make sure to use the proper HTML tags. 🙏
 
 Once you've completed 1.1 and 1.2, you should have something like this.
@@ -35,7 +35,7 @@ Once you've completed 1.1 and 1.2, you should have something like this.
 
 ## 1.3
 
-It is better practice to split our code into _partials_ that have only one job to do. 
+It is better practice to split our code into _partials_ that have only one job to do.
 
 - Move the rendering of the `<li>` for the song to its own file in `/views/partials` call it `song.ejs`.
 - Once you've done that, you can add more song data to the page. Add the rest of the data provided. (`rank`, `title`, `artist`, `streams`, `publicationDate`).
@@ -46,8 +46,8 @@ It is better practice to split our code into _partials_ that have only one job t
 
 Time to style the `<li>`s to be a little more readable / presentable.
 
-- we have upgraded to `scss`, from `css`. 
-- Look inside the `scss` folder. There is already a `_song.scss` file in there. It is being imported into `styles.scss` and then compiled into the `public/css/styles.css`. **Do not modify anything `public`.
+- we have upgraded to `scss`, from `css`.
+- Look inside the `scss` folder. There is already a `_song.scss` file in there. It is being imported into `styles.scss` and then compiled into the `public/css/styles.css`. \*\*Do not modify anything `public`.
 - Write your css in `_song.scss`. Save and reload the page sporadically to check on your progress. You should have something like this below.
 
 ![](./assets/top50_1.4.png)
@@ -61,7 +61,7 @@ Time to style the `<li>`s to be a little more readable / presentable.
 
 ![](./assets/top50_1.5.png)
 
-## 1.6 
+## 1.6
 
 It would be great if each song could have its own page. How do you feel about creating 50 endpoints in `server.js`?
 
@@ -76,7 +76,7 @@ No! We ain't doing that, but I would still like to be able to access each indivi
 
 ![](./assets/top50_1.6.png)
 
-## 1.7 
+## 1.7
 
 Try navigating to a url for a song that is ranked above 50, below 1. What happens? Our server borks and can't serve a page that doesn't exist.
 
