@@ -1,8 +1,8 @@
 <%- include( '../partials/header') %>
 <div>
   <ul class="top50-list">
-    <% top50.forEach(song => { %>
-    <li>Number <%=song.rank%>. <%=song.title%> <%});%></li>
+    <% top50.forEach(song => { %> <%- include('../partials/song', {song}) %>
+    <%});%>
   </ul>
 </div>
 <%- include( '../partials/footer') %>
