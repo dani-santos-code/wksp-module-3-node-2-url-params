@@ -83,6 +83,9 @@ codeblock {
   margin: 12px 32px 6px 0;
   padding: 12px 14px; }
 
+.top50-list {
+  padding: 20px; }
+
 body {
   background: #fafafa;
   display: flex;
@@ -104,7 +107,7 @@ header {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
     color: slategray; }
     .main.four-oh-four .title {
       font-size: 96px; }
