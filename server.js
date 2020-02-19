@@ -64,7 +64,7 @@ app.get("/books/:number", (req, res) => {
   if (bookNumber >= 101 && bookNumber <= 125) {
     let filteredBook = filterByBookId.filterById(bookNumber);
     res.render("pages/bookById", {
-      title: `Book #${filteredBook[0].title}`,
+      title: `"${filteredBook[0].title}"`,
       filteredBook
     });
   } else {
