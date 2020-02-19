@@ -6,6 +6,8 @@ const express = require("express");
 
 const { top50 } = require("./data/top50");
 
+const { books } = require("./data/books");
+
 const mostPopularArtist = require("./data/mostPopular");
 
 const filter = require("./data/filteredByRank");
@@ -37,10 +39,21 @@ app.get("/top50/popular-artist", (req, res) => {
 
 app.get("/top50/song/:number", (req, res) => {
   const songNumber = req.params.number;
-  let filteredSong = filter.filterByRank(songNumber);
-  res.render("pages/songByRank", {
-    title: `Song #${filteredSong[0].rank}`,
-    filteredSong
+  if (songNumber <= top50.length && songNumber >= 1) {
+    let filteredSong = filter.filterByRank(songNumber);
+    res.render("pages/songByRank", {
+      title: `Song #${filteredSong[0].rank}`,
+      filteredSong
+    });
+  } else {
+    res.redirect("pages/fourOhFour");
+  }
+});
+
+app.get("/books", (req, res) => {
+  res.render("pages/allBooks", {
+    title: "All Books",
+    allBooks
   });
 });
 

@@ -1,8 +1,7 @@
 <%- include( '../partials/header') %>
-<div>
+<ul class="top50-list">
   <ul class="top50-list">
-    <% filteredSong.forEach(song => { %> <%- include('../partials/song', {song})
-    %> <%});%>
+    <% books.forEach(book=> { %> <%=book.title%> <%});%>
   </ul>
-</div>
+</ul>
 <%- include( '../partials/footer') %>
