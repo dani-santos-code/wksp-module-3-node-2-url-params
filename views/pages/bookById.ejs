@@ -1,0 +1,8 @@
+<%- include( '../partials/header') %>
+<div>
+  <ul class="book_wrapper">
+    <% filteredBook.forEach(book => { %> <%- include('../partials/book', {book})
+    %> <%});%>
+  </ul>
+</div>
+<%- include( '../partials/footer') %>
