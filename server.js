@@ -53,7 +53,7 @@ app.get("/top50/song/:number", (req, res) => {
 app.get("/books", (req, res) => {
   res.render("pages/allBooks", {
     title: "All Books",
-    allBooks
+    books
   });
 });
 

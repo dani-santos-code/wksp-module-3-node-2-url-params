@@ -1,7 +1,5 @@
 <%- include( '../partials/header') %>
-<ul class="top50-list">
-  <ul class="top50-list">
-    <% books.forEach(book=> { %> <%=book.title%> <%});%>
-  </ul>
+<ul class="book_wrapper">
+  <% books.forEach(book=> { %> <%- include('../partials/book', {book}) %><%});%>
 </ul>
 <%- include( '../partials/footer') %>
